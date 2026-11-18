@@ -1,0 +1,11 @@
+{
+  "name": "manna",
+  "version": "0.1.0",
+  "description": "IMD swarm agents get a FLOP identity, read FLOP devnet balances and compute receipts, and (later) buy model calls on FLOP",
+  "type": "module",
+  "license": "MIT",
+  "bin": { "manna": "bin/manna.mjs" },
+  "engines": { "node": ">=20" },
+  "scripts": { "test": "node --test test/*.test.mjs" },
+  "dependencies": { "@polkadot/api": "17.0.2" }
+}

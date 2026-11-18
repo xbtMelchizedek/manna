@@ -1,0 +1,326 @@
+{
+ "spec": "docs/KEYLINK.md (agentwork key-link v1)",
+ "warning": "PUBLIC test keys derived from published labels (seed = sha256('agentwork public test key: ' + label)). Worthless. Never fund.",
+ "path_a": [
+  {
+   "key_label": "keylink-agent",
+   "did": "did:key:z6MkmtvWyvAbZgSurbDHmcHgzMZ9GR8QGf8k7YxkkrAGC9Xo",
+   "multicodec_hex": "ed01",
+   "ed25519_pub_hex": "6e94d4558e6d0f93d3f95693a4ebf087a46da7412e1164503ef1383fc6a04922",
+   "account_id32": "0x6e94d4558e6d0f93d3f95693a4ebf087a46da7412e1164503ef1383fc6a04922",
+   "ss58_prefix": 42,
+   "ss58": "5EZhLSjjnDpqf7iGjaZqotJMsBYFLgiPzZaz4dW5TjJntudA"
+  },
+  {
+   "key_label": "keylink-agent-2",
+   "did": "did:key:z6MkjEpF9Viyj8GcuxbnDbsHZf6EZwLffSDhu26TVj5mwX1e",
+   "multicodec_hex": "ed01",
+   "ed25519_pub_hex": "471a4abac8ead78702e7e91c1047a1f956c0cfdb769af2500ddfdbabf335908d",
+   "account_id32": "0x471a4abac8ead78702e7e91c1047a1f956c0cfdb769af2500ddfdbabf335908d",
+   "ss58_prefix": 42,
+   "ss58": "5Dfw4rfSvoPL6pM5CHGHpTaoDihEjZm6p84yYpgecoBiPpVg"
+  }
+ ],
+ "ss58_sanity": {
+  "pub_hex": "d43593c715fdd31c61141abd04a99fd6822c8558854ccde39a5684e7a56da27d",
+  "ss58": "5GrwvaEF5zXb26Fz9rcQpDWS57CtERHpNehXCPcNoHGKutQY",
+  "note": "Substrate well-known dev key, prefix 42"
+ },
+ "evm_test_address": "0x26d84b63496bb8ea2d543a981039ed89d5dc2971",
+ "valid": [
+  {
+   "name": "path-a-ed25519-did-is-account",
+   "valid": true,
+   "why": "one key: did:key pubkey == AccountId32; did signature alone",
+   "doc": {
+    "record": {
+     "v": "agentwork.keylink/1",
+     "did": "did:key:z6MkmtvWyvAbZgSurbDHmcHgzMZ9GR8QGf8k7YxkkrAGC9Xo",
+     "issued": 1795000000000,
+     "nonce": "00000000000000a1",
+     "flop": {
+      "account": "0x6e94d4558e6d0f93d3f95693a4ebf087a46da7412e1164503ef1383fc6a04922",
+      "scheme": "ed25519",
+      "net": "flop-testnet"
+     }
+    },
+    "sigs": {
+     "did": "DQiYbYc4VGGAgQ_EARxWPq3Bts0uqDYFnpFM7Ynh5kyMf_9FatPekFMA3-krpCjNEhBkYlwCJpOsZUIN-013DQ"
+    }
+   },
+   "cid": "0xff0712361f846c4faed64cdb44a2f588c4ca6fdc12943c46fee03b0f953b6bd0",
+   "path": "A",
+   "errors": [],
+   "evm_text": null
+  },
+  {
+   "name": "path-b-separate-ed25519-flop-key",
+   "valid": true,
+   "why": "dual-signed: did + flop",
+   "doc": {
+    "record": {
+     "v": "agentwork.keylink/1",
+     "did": "did:key:z6MkmtvWyvAbZgSurbDHmcHgzMZ9GR8QGf8k7YxkkrAGC9Xo",
+     "issued": 1795000000000,
+     "nonce": "00000000000000b1",
+     "flop": {
+      "account": "0x5053426e952d956dc2e1cb26666f710b58379726c5f683e4df17075b7996bf10",
+      "scheme": "ed25519",
+      "net": "flop-testnet"
+     }
+    },
+    "sigs": {
+     "did": "MsmnRP3gjxDjq8J-H0E2IHLBCh3Bw_g9KG1mMmvkXU2SPLMBYDaJNRnsG3IBKttBaSUBV9-BjWcBWnaGm0_sAA",
+     "flop": "0xa43aa1856dc41ad0825d9e6da80e115231089a2344013cf50b4144c6000d6d7bfb977c92bb153f99d7337062ef73c589eb9099e4b6ca550e1a7d15e52758980f"
+    }
+   },
+   "cid": "0x8eb28d661e8097ac3e7d373bf8d5456e13befd64e0c06e35cb2de8e9869045ff",
+   "path": "B",
+   "errors": [],
+   "evm_text": null
+  },
+  {
+   "name": "path-a-imd-seat-device-evm",
+   "valid": true,
+   "why": "did + IMD device + seat-holder EIP-191",
+   "doc": {
+    "record": {
+     "v": "agentwork.keylink/1",
+     "did": "did:key:z6MkmtvWyvAbZgSurbDHmcHgzMZ9GR8QGf8k7YxkkrAGC9Xo",
+     "issued": 1795000000000,
+     "nonce": "00000000000000c1",
+     "flop": {
+      "account": "0x6e94d4558e6d0f93d3f95693a4ebf087a46da7412e1164503ef1383fc6a04922",
+      "scheme": "ed25519",
+      "net": "flop-testnet"
+     },
+     "imd": {
+      "chainId": 1,
+      "collection": "0x0000ec93127baa929e58e97dd0095a2bfb38ec1d",
+      "tokenId": "42",
+      "agentId": "1337",
+      "identityRegistry": "0x8004a169fb4a3325136eb29fa0ceb6d2e539a432",
+      "device": "d8bee625bb1a48e9737e68ed97576d271c05792d31cf475dd05b858a0e76fc6e"
+     },
+     "evm": {
+      "address": "0x26d84b63496bb8ea2d543a981039ed89d5dc2971"
+     },
+     "expires": 1826536000000
+    },
+    "sigs": {
+     "did": "S9LeHC3DRYpkQBcV-qdh8kcw9gHA8_1CAlETEdCxvRJxGka8OQteEfvn5290axa7PykRDCRVSgKsNMX-uAAUDA",
+     "device": "0x8a5167863f3e3f138902c95ed7c84f874ffcf5ea4503955c30ef0d015af4c11a9641497088885aeb85affd9f64d30288380e90e860857b70f7d3a8be290d210e",
+     "evm": "0xd8d5fbdc4572052424d0141b3046e3484f48baf820a755e489fb4af326d47eca56a79ca5fcac6715f3eca35e8edca1b4939e35657cf3d513f0af689c950acf361b"
+    }
+   },
+   "cid": "0xa5a077c1a72b1bd5b4c201f9393e49707d6ebbafbf4f51a76fdae435f215a44b",
+   "path": "A",
+   "errors": [],
+   "evm_text": "agentwork key-link v1\nI link the identities below. This moves no funds and grants no spending rights.\ncid: 0xa5a077c1a72b1bd5b4c201f9393e49707d6ebbafbf4f51a76fdae435f215a44b\ndid: did:key:z6MkmtvWyvAbZgSurbDHmcHgzMZ9GR8QGf8k7YxkkrAGC9Xo\nflop: 5EZhLSjjnDpqf7iGjaZqotJMsBYFLgiPzZaz4dW5TjJntudA (ed25519, flop-testnet)\nimd seat: chain 1 collection 0x0000ec93127baa929e58e97dd0095a2bfb38ec1d token 42 agent 1337\nevm: 0x26d84b63496bb8ea2d543a981039ed89d5dc2971\nissued: 1795000000000"
+  }
+ ],
+ "invalid": [
+  {
+   "name": "path-b-missing-flop-sig",
+   "valid": false,
+   "why": "flop account not proven",
+   "doc": {
+    "record": {
+     "v": "agentwork.keylink/1",
+     "did": "did:key:z6MkmtvWyvAbZgSurbDHmcHgzMZ9GR8QGf8k7YxkkrAGC9Xo",
+     "issued": 1795000000000,
+     "nonce": "00000000000000b2",
+     "flop": {
+      "account": "0x5053426e952d956dc2e1cb26666f710b58379726c5f683e4df17075b7996bf10",
+      "scheme": "ed25519",
+      "net": "flop-testnet"
+     }
+    },
+    "sigs": {
+     "did": "dxStVdEyLWVk21VfHAzvdFRyWK22QoXQqyqAqoqd_vTLmAmoHIcX2IFwoBTTzJPhY-9VSZRvBNCTZ0abTVMSDg"
+    }
+   },
+   "cid": "0xed552b1870fb492689cc616ecaf11e0d03114ec5f5fd492da3e89cc2eb56220d",
+   "path": "B",
+   "errors": [
+    "missing flop signature"
+   ],
+   "evm_text": null
+  },
+  {
+   "name": "role-swap-replay",
+   "valid": false,
+   "why": "flop signed the did-role message",
+   "doc": {
+    "record": {
+     "v": "agentwork.keylink/1",
+     "did": "did:key:z6MkmtvWyvAbZgSurbDHmcHgzMZ9GR8QGf8k7YxkkrAGC9Xo",
+     "issued": 1795000000000,
+     "nonce": "00000000000000b1",
+     "flop": {
+      "account": "0x5053426e952d956dc2e1cb26666f710b58379726c5f683e4df17075b7996bf10",
+      "scheme": "ed25519",
+      "net": "flop-testnet"
+     }
+    },
+    "sigs": {
+     "did": "MsmnRP3gjxDjq8J-H0E2IHLBCh3Bw_g9KG1mMmvkXU2SPLMBYDaJNRnsG3IBKttBaSUBV9-BjWcBWnaGm0_sAA",
+     "flop": "0x9fc77f4dea7d9aaca9d9cf1e22ed0a641e636d5be660b5721c8d9c733f9f505f4c9e1638ae8fb476eb80cf46e32f396b2bb4edcb44f08664880c7cd2e7362e02"
+    }
+   },
+   "cid": "0x8eb28d661e8097ac3e7d373bf8d5456e13befd64e0c06e35cb2de8e9869045ff",
+   "path": "B",
+   "errors": [
+    "flop signature does not verify"
+   ],
+   "evm_text": null
+  },
+  {
+   "name": "tampered-after-signing",
+   "valid": false,
+   "why": "cid changes, every signature fails",
+   "doc": {
+    "record": {
+     "v": "agentwork.keylink/1",
+     "did": "did:key:z6MkmtvWyvAbZgSurbDHmcHgzMZ9GR8QGf8k7YxkkrAGC9Xo",
+     "issued": 1795000000000,
+     "nonce": "00000000000000c1",
+     "flop": {
+      "account": "0x6e94d4558e6d0f93d3f95693a4ebf087a46da7412e1164503ef1383fc6a04922",
+      "scheme": "ed25519",
+      "net": "flop-testnet"
+     },
+     "imd": {
+      "chainId": 1,
+      "collection": "0x0000ec93127baa929e58e97dd0095a2bfb38ec1d",
+      "tokenId": "43",
+      "agentId": "1337",
+      "identityRegistry": "0x8004a169fb4a3325136eb29fa0ceb6d2e539a432",
+      "device": "d8bee625bb1a48e9737e68ed97576d271c05792d31cf475dd05b858a0e76fc6e"
+     },
+     "evm": {
+      "address": "0x26d84b63496bb8ea2d543a981039ed89d5dc2971"
+     },
+     "expires": 1826536000000
+    },
+    "sigs": {
+     "did": "S9LeHC3DRYpkQBcV-qdh8kcw9gHA8_1CAlETEdCxvRJxGka8OQteEfvn5290axa7PykRDCRVSgKsNMX-uAAUDA",
+     "device": "0x8a5167863f3e3f138902c95ed7c84f874ffcf5ea4503955c30ef0d015af4c11a9641497088885aeb85affd9f64d30288380e90e860857b70f7d3a8be290d210e",
+     "evm": "0xd8d5fbdc4572052424d0141b3046e3484f48baf820a755e489fb4af326d47eca56a79ca5fcac6715f3eca35e8edca1b4939e35657cf3d513f0af689c950acf361b"
+    }
+   },
+   "cid": "0x4d75b8bae8d7c2acc242c32e6110a4fa3771ddbeaf6b0997b78b506aa02e6e77",
+   "path": "A",
+   "errors": [
+    "did signature does not verify",
+    "device signature does not verify",
+    "evm signature does not verify"
+   ],
+   "evm_text": "agentwork key-link v1\nI link the identities below. This moves no funds and grants no spending rights.\ncid: 0x4d75b8bae8d7c2acc242c32e6110a4fa3771ddbeaf6b0997b78b506aa02e6e77\ndid: did:key:z6MkmtvWyvAbZgSurbDHmcHgzMZ9GR8QGf8k7YxkkrAGC9Xo\nflop: 5EZhLSjjnDpqf7iGjaZqotJMsBYFLgiPzZaz4dW5TjJntudA (ed25519, flop-testnet)\nimd seat: chain 1 collection 0x0000ec93127baa929e58e97dd0095a2bfb38ec1d token 43 agent 1337\nevm: 0x26d84b63496bb8ea2d543a981039ed89d5dc2971\nissued: 1795000000000"
+  },
+  {
+   "name": "evm-address-mismatch",
+   "valid": false,
+   "why": "recovered signer is not the named owner",
+   "doc": {
+    "record": {
+     "v": "agentwork.keylink/1",
+     "did": "did:key:z6MkmtvWyvAbZgSurbDHmcHgzMZ9GR8QGf8k7YxkkrAGC9Xo",
+     "issued": 1795000000000,
+     "nonce": "00000000000000c2",
+     "flop": {
+      "account": "0x6e94d4558e6d0f93d3f95693a4ebf087a46da7412e1164503ef1383fc6a04922",
+      "scheme": "ed25519",
+      "net": "flop-testnet"
+     },
+     "imd": {
+      "chainId": 1,
+      "collection": "0x0000ec93127baa929e58e97dd0095a2bfb38ec1d",
+      "tokenId": "42",
+      "agentId": "1337",
+      "identityRegistry": "0x8004a169fb4a3325136eb29fa0ceb6d2e539a432"
+     },
+     "evm": {
+      "address": "0x1111111111111111111111111111111111111111"
+     }
+    },
+    "sigs": {
+     "did": "wAI4lvoZcVtJh_hFIJuGS8JAQfg0gSa-jNg-bBTqvmFKdueiwgrpbRJSZO0R2jAvZzXBM4UPfp43l7kXjOHgCA",
+     "evm": "0xed072878be79362e1324df72104b75fc711dbd517fa446df5b78918f60e3b63c41f67b22c7f18426c0ffd186ab5df3a72ab865e5cef1ecc7452b7c2d90e771f11c"
+    }
+   },
+   "cid": "0x31f2c3fa45c1f5a17613771d37e3055b71d42abfb8c0b9eb743cb4afbee82f5c",
+   "path": "A",
+   "errors": [
+    "evm signature does not verify"
+   ],
+   "evm_text": "agentwork key-link v1\nI link the identities below. This moves no funds and grants no spending rights.\ncid: 0x31f2c3fa45c1f5a17613771d37e3055b71d42abfb8c0b9eb743cb4afbee82f5c\ndid: did:key:z6MkmtvWyvAbZgSurbDHmcHgzMZ9GR8QGf8k7YxkkrAGC9Xo\nflop: 5EZhLSjjnDpqf7iGjaZqotJMsBYFLgiPzZaz4dW5TjJntudA (ed25519, flop-testnet)\nimd seat: chain 1 collection 0x0000ec93127baa929e58e97dd0095a2bfb38ec1d token 42 agent 1337\nevm: 0x1111111111111111111111111111111111111111\nissued: 1795000000000"
+  }
+ ],
+ "revocation": {
+  "link": "0xa5a077c1a72b1bd5b4c201f9393e49707d6ebbafbf4f51a76fdae435f215a44b",
+  "doc": {
+   "revoke": {
+    "v": "agentwork.keylink-revoke/1",
+    "link": "0xa5a077c1a72b1bd5b4c201f9393e49707d6ebbafbf4f51a76fdae435f215a44b",
+    "issued": 1795000005000,
+    "nonce": "00000000000000d1",
+    "reason": "seat sold"
+   },
+   "by": "evm",
+   "sig": "0xd698a998c568ac1bdf26b79fc19f9880ede4cac53667cd723bed16f07f190c4413824f56334931c3574ea189dd36d104a037b5f37a5d538f7d434488c750c79e1b"
+  },
+  "cid": "0x00898ffab28093b8e39d2cdf11b7f5c7f68a5bcf870c4e0c493f99061c097f69"
+ },
+ "lineage": {
+  "lines": [
+   "agb1 {\"b\":{\"kind\":\"inception\",\"next_key_hash\":\"0x684ed76e2abf89733123a05571b1b76d981d90b34ecb684959431d20d15d5c71\",\"purpose\":\"keylink demo agent\",\"seq\":0},\"cid\":\"0xf5fda1c4609edf63719eda537e0da58da2fcb6eb8bb7dd7dc9fde771658f64c5\",\"from\":\"did:key:z6MkmtvWyvAbZgSurbDHmcHgzMZ9GR8QGf8k7YxkkrAGC9Xo\",\"n\":\"f1133d332021aba3\",\"room\":\"lineage\",\"s\":\"agb.lineage/1\",\"sig\":\"UCl9iVw5Wz_Q0PqK1GalTCcbrf-CxMg8Q5C-qepmz8I3rK_QWjA3RbfUDFL7wevZxrs_JfEeX_3OD1OQ34zuAg\",\"t\":\"lineage\",\"ts\":1795000000000}",
+   "agb1 {\"b\":{\"kind\":\"entry\",\"lin\":\"lin:0xf5fda1c4609edf63719eda537e0da58da2fcb6eb8bb7dd7dc9fde771658f64c5\",\"prev\":\"0xf5fda1c4609edf63719eda537e0da58da2fcb6eb8bb7dd7dc9fde771658f64c5\",\"ref\":\"keylink:0xff0712361f846c4faed64cdb44a2f588c4ca6fdc12943c46fee03b0f953b6bd0\",\"seq\":1,\"what\":\"decision\"},\"cid\":\"0x94fd775f8faf3474a8cb9ff9715f5b046cfcf8062b116bc9bf60593cc67be57b\",\"from\":\"did:key:z6MkmtvWyvAbZgSurbDHmcHgzMZ9GR8QGf8k7YxkkrAGC9Xo\",\"n\":\"22e1903e979cc293\",\"room\":\"lineage/lin:0xf5fda1c4609edf63719eda537e0da58da2fcb6eb8bb7dd7dc9fde771658f64c5\",\"s\":\"agb.lineage/1\",\"sig\":\"cwn-Biz-LPChPIGb576TSilPI6i6PrhOecJXOzXya01XzmnQzOj-KX_P5mttmy1Jhz0MW7BwEnpKsM0S1VO3BQ\",\"t\":\"lineage\",\"ts\":1795000000001}",
+   "agb1 {\"b\":{\"kind\":\"rotation\",\"lin\":\"lin:0xf5fda1c4609edf63719eda537e0da58da2fcb6eb8bb7dd7dc9fde771658f64c5\",\"new_key\":\"did:key:z6MkjEpF9Viyj8GcuxbnDbsHZf6EZwLffSDhu26TVj5mwX1e\",\"prev\":\"0x94fd775f8faf3474a8cb9ff9715f5b046cfcf8062b116bc9bf60593cc67be57b\",\"seq\":2},\"cid\":\"0x1ed015b581ba23d4e65662895bd69bf8291df77e841a23887a2e782e4709c69a\",\"from\":\"did:key:z6MkmtvWyvAbZgSurbDHmcHgzMZ9GR8QGf8k7YxkkrAGC9Xo\",\"n\":\"7b73d9eeb13aea55\",\"room\":\"lineage/lin:0xf5fda1c4609edf63719eda537e0da58da2fcb6eb8bb7dd7dc9fde771658f64c5\",\"s\":\"agb.lineage/1\",\"sig\":\"-ek5C-cb6KE0UMlY5LERVWKRJKJGgcVt7roRyCetWAMGHCRXPyew8adFdr_dpzO_uxUaKc5XzZhg844koPtMDw\",\"t\":\"lineage\",\"ts\":1795000000002}",
+   "agb1 {\"b\":{\"kind\":\"entry\",\"lin\":\"lin:0xf5fda1c4609edf63719eda537e0da58da2fcb6eb8bb7dd7dc9fde771658f64c5\",\"prev\":\"0x1ed015b581ba23d4e65662895bd69bf8291df77e841a23887a2e782e4709c69a\",\"ref\":\"keylink:0xa3f068b2c402f792c125ad5afac9975d3fac12339f6055cdb670daa9855f1dbe\",\"seq\":3,\"what\":\"decision\"},\"cid\":\"0xc6dece6ec57739471d74c106fef802e8b882b64aa38b91753321ef6b204310be\",\"from\":\"did:key:z6MkjEpF9Viyj8GcuxbnDbsHZf6EZwLffSDhu26TVj5mwX1e\",\"n\":\"ed5eef6d9c71b0e8\",\"room\":\"lineage/lin:0xf5fda1c4609edf63719eda537e0da58da2fcb6eb8bb7dd7dc9fde771658f64c5\",\"s\":\"agb.lineage/1\",\"sig\":\"cyPdUVgOTjTlkzQI2-39Kxdxhl_dm-vkQHvVajMi_Z447BPVv2JoJm5RkpxZ1l341EbJPeJlrL3bgVsxRZVuBg\",\"t\":\"lineage\",\"ts\":1795000000004}"
+  ],
+  "links": [
+   {
+    "record": {
+     "v": "agentwork.keylink/1",
+     "did": "did:key:z6MkmtvWyvAbZgSurbDHmcHgzMZ9GR8QGf8k7YxkkrAGC9Xo",
+     "issued": 1795000000000,
+     "nonce": "00000000000000a1",
+     "flop": {
+      "account": "0x6e94d4558e6d0f93d3f95693a4ebf087a46da7412e1164503ef1383fc6a04922",
+      "scheme": "ed25519",
+      "net": "flop-testnet"
+     }
+    },
+    "sigs": {
+     "did": "DQiYbYc4VGGAgQ_EARxWPq3Bts0uqDYFnpFM7Ynh5kyMf_9FatPekFMA3-krpCjNEhBkYlwCJpOsZUIN-013DQ"
+    }
+   },
+   {
+    "record": {
+     "v": "agentwork.keylink/1",
+     "did": "did:key:z6MkjEpF9Viyj8GcuxbnDbsHZf6EZwLffSDhu26TVj5mwX1e",
+     "issued": 1795000000003,
+     "nonce": "00000000000000e1",
+     "prev": "0xff0712361f846c4faed64cdb44a2f588c4ca6fdc12943c46fee03b0f953b6bd0",
+     "flop": {
+      "account": "0x471a4abac8ead78702e7e91c1047a1f956c0cfdb769af2500ddfdbabf335908d",
+      "scheme": "ed25519",
+      "net": "flop-testnet"
+     }
+    },
+    "sigs": {
+     "did": "SOH7a4j0TsxaT203Qsd2z2sRz2Dj4iAe7sj0w_tpMZkd3u-PSgIvztLzdFmfnd5gKPyip3L_PrA-8mjw0v1WDA"
+    }
+   }
+  ],
+  "active": {
+   "ok": true,
+   "lin": "lin:0xf5fda1c4609edf63719eda537e0da58da2fcb6eb8bb7dd7dc9fde771658f64c5",
+   "active": "0xa3f068b2c402f792c125ad5afac9975d3fac12339f6055cdb670daa9855f1dbe",
+   "path": "A",
+   "did": "did:key:z6MkjEpF9Viyj8GcuxbnDbsHZf6EZwLffSDhu26TVj5mwX1e",
+   "flop": "5Dfw4rfSvoPL6pM5CHGHpTaoDihEjZm6p84yYpgecoBiPpVg"
+  }
+ }
+}
